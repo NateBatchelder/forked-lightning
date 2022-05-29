@@ -1,16 +1,19 @@
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-import './App.css';
+// imports
+import React from "react";
+import "./App.css";
+import { Outlet, Link } from "react-router-dom";
 
-function App() {
+import Navbar from "./routes/Nav";
+import Footer from "./routes/Footer";
+
+export default function App() {
   return (
-    <div className="App">
-      <Nav />
+    <div>
+      <div>
+        <Link to="portfolio">Portfolio</Link> | <Link to="about">About</Link>
+      </div>
       <Footer />
-      
-      
+      <Outlet />
     </div>
   );
 }
-
-export default App;

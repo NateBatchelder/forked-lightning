@@ -5,6 +5,7 @@ import {
   MDBIcon,
 } from "mdb-react-ui-kit";
 
+
 export default function Footer() {
   return (
     <MDBFooter

@@ -9,7 +9,9 @@ import {
   MDBNavbarItem,
 } from "mdb-react-ui-kit";
 
-export default function Nav() {
+import { NavLink, NavMenue, NavBtn, NavBtnLink } from "./NavbarElements";
+
+export default function Navbar () {
   return (
     <>
       <header>
@@ -27,6 +29,7 @@ export default function Nav() {
                 <MDBNavbarItem active>
                   <MDBNavbarLink href="#">Home</MDBNavbarLink>
                 </MDBNavbarItem>
+
                 <MDBNavbarItem>
                   <MDBNavbarLink
                     href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA"
@@ -36,6 +39,7 @@ export default function Nav() {
                     Learn Bootstrap 5
                   </MDBNavbarLink>
                 </MDBNavbarItem>
+
                 <MDBNavbarItem>
                   <MDBNavbarLink
                     href="https://mdbootstrap.com/docs/standard/"
@@ -47,46 +51,18 @@ export default function Nav() {
               </MDBNavbarNav>
 
               <MDBNavbarNav fullWidth={false} className="flex-row">
-                <MDBNavbarItem>
-                  <MDBNavbarLink
-                    className="pe-2"
-                    href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA"
-                    rel="nofollow"
-                    target="_blank"
-                  >
-                    <MDBIcon fab icon="youtube" />
-                  </MDBNavbarLink>
-                </MDBNavbarItem>
-                <MDBNavbarItem>
-                  <MDBNavbarLink
-                    className="nav-link px-2"
-                    href="https://www.facebook.com/mdbootstrap"
-                    rel="nofollow"
-                    target="_blank"
-                  >
-                    <MDBIcon fab icon="facebook-f" />
-                  </MDBNavbarLink>
-                </MDBNavbarItem>
-                <MDBNavbarItem>
-                  <MDBNavbarLink
-                    className="nav-link px-2"
-                    href="https://twitter.com/MDBootstrap"
-                    rel="nofollow"
-                    target="_blank"
-                  >
-                    <MDBIcon fab icon="twitter" />
-                  </MDBNavbarLink>
-                </MDBNavbarItem>
-                <MDBNavbarItem>
-                  <MDBNavbarLink
-                    className="nav-link ps-2"
-                    href="https://github.com/mdbootstrap/mdb-ui-kit"
-                    rel="nofollow"
-                    target="_blank"
-                  >
-                    <MDBIcon fab icon="github" />
-                  </MDBNavbarLink>
-                </MDBNavbarItem>
+                <NavLink to="/LoginRegister" activeStyle>
+                  Login
+                </NavLink>
+                <NavLink to="/About" activeStyle>
+                  About
+                </NavLink>
+                <NavLink to="/Contact" activeStyle>
+                  Contact
+                </NavLink>
+                <NavLink to="/Portfolio" activeStyle>
+                  Portfolio
+                </NavLink>
               </MDBNavbarNav>
             </div>
           </MDBContainer>
@@ -107,7 +83,7 @@ export default function Nav() {
           >
             <div className="container d-flex align-items-center text-center h-100">
               <div>
-                <h1 className="mb-5">This is title</h1>
+                <h1 className="mb-5">Forked-Lightning</h1>
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Officiis molestiae laboriosam numquam expedita ullam saepe
@@ -119,16 +95,6 @@ export default function Nav() {
           </div>
         </div>
       </header>
-
-      <div className="container my-5">
-        <p>
-          {" "}
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis quam
-          minima perspiciatis eos tenetur. Praesentium dolores at quos aperiam
-          sed, sint provident consectetur incidunt, nostrum porro earum commodi,
-          ex architecto.
-        </p>
-      </div>
     </>
   );
 }

@@ -1,19 +1,30 @@
-// imports
-import React from "react";
-import "./App.css";
-import { Outlet, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-import Navbar from "./routes/Nav";
-import Footer from "./routes/Footer";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Layout from "./components/Layout";
+import Portfolio from "./components/Portfolio";
 
-export default function App() {
+import "./index.css";
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
+
+import "./App.scss";
+
+function App() {
   return (
-    <div>
-      <div>
-        <Link to="portfolio">Portfolio</Link> | <Link to="about">About</Link>
-      </div>
-      <Footer />
-      <Outlet />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
+
+export default App;
+
